@@ -25,7 +25,7 @@ cmake_install_executorch_lib() {
 }
 
 test_cmake_size_test() {
-    retry cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=cmake-out -Bcmake-out/test test
+    retry cmake -DCMAKE_CXX_STANDARD=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=cmake-out -Bcmake-out/test test
 
     echo "Build selective build test"
     cmake --build cmake-out/test -j9 --config Release
